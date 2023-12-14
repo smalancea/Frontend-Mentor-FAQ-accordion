@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap');
+
+:root {
+  --White: hsl(0, 0%, 100%);
+  --Light-pink: hsl(275, 100%, 97%);
+  --Grayish-purple: hsl(292, 16%, 49%);
+  --Dark-purple: hsl(292, 42%, 14%);
+  --hover: hsla(281, 83%, 54%, 1);
+
+  --box-shadow: hsl(276, 65%, 88%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(/assets/images/background-pattern-desktop.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: var(--Light-pink);
+}
+
+.card {
+  max-width: 600px;
+  background-color: var(--White);
+  padding: 2rem;
+  border-radius: 0.8rem;
+  box-shadow: 0.1rem 1rem 2rem var(--box-shadow);
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--Light-pink);
+}
+
+.active > .content {
+  display: flex;
+}
+
+.container:last-child {
+  border: none;
+}
+
+.container-label {
+  display: flex;
+  justify-content: space-between;
+}
+
+.label {
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 1.5rem 0;
+  cursor: pointer;
+}
+
+.label:hover {
+  color: var(--hover);
+}
+
+.icon-plus {
+  display: inline;
+}
+
+.content {
+  padding: 0 0 1.5rem 0;
+  color: var(--Grayish-purple);
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    background: url(./assets/images/background-pattern-mobile.svg);
+    background-color: var(--Light-pink);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  h1 {
+    font-size: 2.6rem;
+  }
+
+  .card {
+    margin: 1.2rem;
+    box-shadow: none;
+  }
+}
